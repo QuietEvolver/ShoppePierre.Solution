@@ -2,6 +2,8 @@
 @{
   Layout = "_Layout";
 }
+
+<h2> ShoppePierre Vendor(s)</h2>
 @if (Model.Count == 0)
 {
   <p> There are no current entries in the list.</p>
@@ -9,13 +11,11 @@
 <ul>
   @foreach(Vendor vendor in Model)
   {
-    <li>Vendor Title: @Vendor.Title</li>
+    <li>Vendor Title: @Vendor.VendorTitle</li>
     <li>Vendor Description: @Vendor.Description</li>
     <li>Order Info:</li>
       <ul>
-        <li>OrderNumber: @Vendor.OrderId.OrderNumber</li>
-        <li>Name: @Vendor.OrderId.Name</li>
-        <li>Email: @Vendor.OrderId.Email</li>
+        <p><a href ='/vendors/@vendor.Id'>@vendor.VendorTitle</a></p>
       </ul>
   }
 </ul>

@@ -4,18 +4,20 @@
 
 <h1>Add a New Vendor</h1>
 <p>Enter Vendor Details:</p>
-<form class="" action="/" method="post">
-  <label for="title">Title:</label>
-  <input type="text" name="title" value="">
+<form class="" action="/vendors" method="post">
+  <label for="vendorTitle">Vendor Title:</label>
+  <input id="vendorTitle" type="text" name="vendorTitle" value="">
   <br>
   <label for="description">Description</label>
-  <input type="text" name="description" value="">
-  <br>
-    <p><a href="/vendors">Back to Vendor Orders</a></p>
-    <button class="btn btn-danger" type="button" name="viewVendor" onclick="window.location.href='/vendors'">View all vendors</button>
-    </button>
-
-    <p><a href="/orders">Back to Vendor Orders</a></p>
-    <button class="btn btn-danger" type="button" name="viewVendor" onclick="window.location.href='/orders'">View all orders</button>
-    </button>
+  <input id="description" type="text" name="description" value="">
+  <button class="btn btn-danger" type="submit" name="viewVendorsButton" onclick="window.location.href='/'">Home</button>
 </form>
+  <br>
+    <p><a href="/vendors">Back to Vendors</a></p>
+    <p><a href="/">Back to Home</a></p>
+    <button class="btn btn-danger" type="button" name="viewVendorsButton" onclick="window.location.href='/vendors'">View all vendors</button>
+    
+
+    <!-- <p><a href="/vendor/orders">Back to Orders</a></p>
+    <button class="btn btn-danger" type="submit" name="viewOrdersButton" onclick="window.location.href='/orders'">View all orders</button>
+    </button> -->

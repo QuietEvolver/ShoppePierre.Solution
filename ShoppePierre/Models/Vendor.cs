@@ -5,28 +5,36 @@ namespace ShoppePierre.Models
   public class Vendor
   {    
     private  static List<Vendor> _instances = new List<Vendor>{ };
-    public string Title { get; set; }
+    public string VendorTitle { get; set; }
     public string Description { get; set; }
     public int Id { get; }
     public List<Order> Orders { get; set; }
    
-    public Vendor(string title, string description)
+    public Vendor(string vendorTitle, string description)
     {
-      Title = title;
+      VendorTitle = vendorTitle;
       Description = description;
       _instances.Add(this);
       Id = _instances.Count;
       Orders = new List<Order>{ };
-    } 
-    public static List<Vendor> GetAll()
-    {
-      return _instances;
     }
     public void AddOrder(Order order)
     { 
       Orders.Add(order);
     }
-    
+    public static Find(int searchId)
+    { 
+      return _instances[searchId-1];
+    } 
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
+    public static List<Vendor> DeleteAll()
+    {
+      return _instances.Clear();
+    }
+
 /*
     catch blocks can take an Exception as a parameter, which can help handle exceptions even more effectively. The Exception class has a number of useful properties:
 

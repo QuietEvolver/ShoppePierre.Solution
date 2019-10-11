@@ -1,0 +1,13 @@
+@using ShoppePierre.Models;
+@{
+  Layout = "_Layout";
+}
+
+<h2> Shoppe Pierre Order Information: </h2>
+
+<h4>Order Name: @Model["order"].Name</h4>
+<h5>Vendor Title: @Model["vendor"].VendorTitle</h5>
+
+<button class="btn btn-success" type="button" name="home" onclick="window.location.href='/'">Go Back</button>
+<button class="btn btn-success" type="button" name="vendorsHome" onclick="window.location.href='/vendors'">Go Back</button>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add Order</a>
