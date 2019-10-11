@@ -6,6 +6,7 @@ namespace ShoppePierre.Models
     public string Name { get; set; }
     public string Email { get; set; }
     public string PhoneNumber { get; set; }
+    public int Id { get; }
     private  static List<Order> _instances = new List<Order>{};
     
     public Order(string name, string email, string phoneNumber)
@@ -22,12 +23,12 @@ namespace ShoppePierre.Models
       return _instances;
     }
      
-    public static List<Order> DeleteAll()
+    public static void DeleteAll()
     {
-      return _instances.Clear();
+      _instances.Clear();
     }
 
-    public static Find(int searchId)
+    public static Order Find(int searchId)
     {
       return _instances[searchId - 1];;
     }

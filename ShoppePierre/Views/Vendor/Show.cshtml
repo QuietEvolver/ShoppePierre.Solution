@@ -5,7 +5,7 @@
 
 <h2> Shoppe Pierre Vendor: Each List Order(s)</h2>
 <ol>
-@foreach(Vendor vendor in Model["orders"])
+@foreach(Order order in Model["orders"])
 {
     <li><a href ='/vendors/@Model["order"].Id/orders/@order.Id'>@order.Name</a></li>
     <li><a href ='/vendors/@Model["order"].Id/orders/@order.Id'>@order.Email</a></li>
@@ -13,6 +13,6 @@
     
 }
 </ol>
-<button class="btn btn-success" type="button" name="home" onclick="window.location.href='/'">Go Back</button>
-<button class="btn btn-success" type="button" name="vendorsHome" onclick="window.location.href='/vendors'">Go Back</button>
-<button class="btn btn-success" type="button" name="ordersHome" onclick="window.location.href='/vendors/@Model["vendor"].Id/orders/@order.Id/new'>Orders Home</button>
+<a href='/'>Go Back</a>
+<a href='/vendors'>Go Back</a>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Orders Home</a>

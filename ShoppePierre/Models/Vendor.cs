@@ -22,7 +22,7 @@ namespace ShoppePierre.Models
     { 
       Orders.Add(order);
     }
-    public static Find(int searchId)
+    public static Vendor Find(int searchId)
     { 
       return _instances[searchId-1];
     } 
@@ -30,11 +30,12 @@ namespace ShoppePierre.Models
     {
       return _instances;
     }
-    public static List<Vendor> DeleteAll()
+    public static void DeleteAll()
     {
-      return _instances.Clear();
+       _instances.Clear();
     }
-
+  }
+} 
 /*
     catch blocks can take an Exception as a parameter, which can help handle exceptions even more effectively. The Exception class has a number of useful properties:
 

@@ -11,12 +11,7 @@
 <ul>
   @foreach(Vendor vendor in Model)
   {
-    <li>Vendor Title: @Vendor.VendorTitle</li>
-    <li>Vendor Description: @Vendor.Description</li>
-    <li>Order Info:</li>
-      <ul>
-        <p><a href ='/vendors/@vendor.Id'>@vendor.VendorTitle</a></p>
-      </ul>
+    <p><a href ='/vendors/@vendor.Id'>@vendor.VendorTitle</a></p>
   }
 </ul>
 <button class="btn btn-success" type="button" name="goback" onclick="window.location.href='/'">Go Back</button>
