@@ -1,21 +1,21 @@
 using System.Collections.Generic;
-namespace FRIDAYPROJECT.Models
+namespace ShoppePierre.Models
 {
-  public class FRIDAYCLASSVARIABLE
+  public class Vendor
   {
     public string Title { get; set; }
     public string Description { get; set; }
-    public Contact Poster { get; set; }
-    private  static List<JobOpening> _instances = new List<JobOpening>{};
-    public static List<JobOpening> GetAll()
+    public Order Poster { get; set; }
+    private  static List<Vendor> _instances = new List<Vendor>{};
+    public static List<Vendor> GetAll()
     {
       return _instances;
     }
-    public JobOpening(string title, string description, string name, string email, string phonenumber)
+    public Vendor(string title, string description, string name, string email, string phonenumber)
     {
       Title = title;
       Description = description;
-      Poster = new Contact(name, email, phonenumber);
+      Poster = new Order(name, email, phonenumber);
       _instances.Add(this);
     }
 /*
@@ -33,17 +33,17 @@ namespace FRIDAYPROJECT.Models
     StackTrace =    at Program.Main()
     TargetSite = Void Main()
     */
-    static void Exception()
-    {
-      try
-      {
-        int value = 1 / int.Parse("0");
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine("Message = {0}", ex.Message);
-        Console.WriteLine("Source = {0}", ex.Source);
-        Console.WriteLine("StackTrace = {0}", ex.StackTrace);
-        Console.WriteLine("TargetSite = {0}", ex.TargetSite);
-      }
-    }
+    // static void Exception()
+    // {
+    //   try
+    //   {
+    //     int value = 1 / int.Parse("0");
+    //   }
+    //   catch (Exception ex)
+    //   {
+    //     Console.WriteLine("Message = {0}", ex.Message);
+    //     Console.WriteLine("Source = {0}", ex.Source);
+    //     Console.WriteLine("StackTrace = {0}", ex.StackTrace);
+    //     Console.WriteLine("TargetSite = {0}", ex.TargetSite);
+    //   }
+    // }

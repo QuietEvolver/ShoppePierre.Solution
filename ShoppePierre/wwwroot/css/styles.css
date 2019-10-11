@@ -1,0 +1,27 @@
+body {
+    font-display: 18px; 
+    color:  rgb(116, 89, 89);
+    border: 3px solid black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size-adjust: 24px;
+  }
+  
+  .jumbotron {
+    background-color: aqua;
+    border: 1em dotted burlywood; 
+    /* font-language-override: normal; */
+  }
+
+  h2 h4{
+    font-style: italic;
+    
+  }
+
+  h2 {
+    font-weight: absolute 1.2em;
+    color: brown;
+  }
+
+  h4 {
+   color: #5c0000;
+  }
