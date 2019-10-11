@@ -9,7 +9,7 @@
   <body>
     <div class="jumbotron">
       <h2>Welcome to the Shoppe Pierre </h2>
-      <h4>A Bakery with Your Discerning Taste in Mind. </h4>
+      <h4>A Bakery with Your Discerning Taste in Mind</h4>
     </div>
     @RenderBody()
   </body>
