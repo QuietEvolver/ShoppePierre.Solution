@@ -1,5 +1,5 @@
 
-# Shoppe Pierre: 
+# Shoppe Pierre 
 ### A Bakery for Your Discerning Taste.
 
 #### _C#, MVC, .NET_
