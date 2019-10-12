@@ -10,18 +10,18 @@ namespace ShoppePierre.Controllers
         return View();
       }
 
-      [HttpGet("/vendors")]//home/vendors
-        public ActionResult Index()
-        {
-            List<Vendor> allVendors = Vendor.GetAll();
-            return View(allVendors);
-        }
+    //   [HttpGet("/vendors")]//home/vendors
+    //     public ActionResult Index()
+    //     {
+    //         List<Vendor> allVendors = Vendor.GetAll();
+    //         return View(allVendors);
+    //     }
 
-        [HttpGet("/vendors/new")]
-        public ActionResult New()
-        {
-            return View();
-        }
+    //     [HttpGet("/vendors/new")]
+    //     public ActionResult New()
+    //     {
+    //         return View();
+    //     }
 
     }
 }
