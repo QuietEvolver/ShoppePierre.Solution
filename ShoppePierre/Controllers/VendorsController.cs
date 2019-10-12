@@ -5,7 +5,7 @@ using ShoppePierre.Models;
 
 namespace ShoppePierre.Controllers
 {
-     public class VendorController : Controller
+     public class VendorsController : Controller
         {
 
      
@@ -22,11 +22,11 @@ namespace ShoppePierre.Controllers
             return View();
         }
 
-        [HttpPost("/")]//** */
+        [HttpPost("/vendors")]
         public ActionResult Create(string vendorTitle, string description)
         {
             Vendor myVendor= new Vendor(vendorTitle, description);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
             
         }
         [HttpGet("/vendors/{id}")]

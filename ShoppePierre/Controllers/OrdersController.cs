@@ -5,36 +5,25 @@ using ShoppePierre.Models;
 
 namespace ShoppePierre.Controllers
 {
-     public class OrderController : Controller
+     public class OrdersController : Controller
     {
-    [HttpGet("/vendors")]
-        public ActionResult Index()
-        {
-            List<Vendor> allVendors = Vendor.GetAll();
-            return View(allVendors);
-        }
+        
 
-        [HttpGet("/vendors/new")]
-        public ActionResult New()
+        [HttpGet("/vendors/{vendorId}/orders/new")]
+        public ActionResult New(int vendorId)
         {
-            return View();
-        }
-
-        [HttpPost("/")]//** */
-        public ActionResult Create(string vendorTitle, string description)
-        {
-            Vendor myVendor= new Vendor(vendorTitle, description);
-            return RedirectToAction("Index", "Home");
+            Vendor vendor= Vendor.Find(vendorId);
+            return View(vendor);
             
         }
-        [HttpGet("/vendors/{id}")]
-        public ActionResult Show(int id)
+        [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+        public ActionResult Show(int vendorId, int orderId)
         {
-            Vendor vendor = Vvendor.Find(id);
-            List<Order> vendorOrders = vendor.Orders;
+            Order order = Order.Find(orderId);
+            Vendor vendor = Vendor.Find(vendorId);
             Dictionary<string, object> model = new Dictionary<string, object>();
             
-            model.Add("orders", orders);
+            model.Add("order", order);
             model.Add("vendor", vendor);
             return View(model);
         }
