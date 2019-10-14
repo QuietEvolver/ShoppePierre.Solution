@@ -44,12 +44,12 @@ namespace ShoppePierre.Controllers
         [HttpPost("/vendors/{vendorId}/Orders")]
         public ActionResult Create(int vendorId, string orderName, string orderEmail, string orderPhoneNumber)
         {
-            Dictionary<string, object> model = new Dictionary<string, object>();
+            // Dictionary<string, object> model = new Dictionary<string, object>();
             Vendor foundVendor = Vendor.Find(vendorId);
-            List<Order>  vendorOrders = foundVendor.Orders; //AutoAdds Order to correct Vendor
-            model.Add("vendor", foundVendor);
-            model.Add("orders", vendorOrders);
-            return View("Show", model);
+            // List<Order>  vendorOrders = foundVendor.Orders; //AutoAdds Order to correct Vendor
+            // model.Add("vendor", foundVendor);
+            // model.Add("orders", vendorOrders);
+            return View("Show", foundVendor);
         }
     }
 }

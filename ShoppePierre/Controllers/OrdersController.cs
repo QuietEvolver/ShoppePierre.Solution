@@ -18,8 +18,13 @@ namespace ShoppePierre.Controllers
         public ActionResult Create(int vendorId, string orderName, string orderEmail, string orderPhoneNumber)
         {
             Order myOrder= new Order(vendorId, orderName, orderEmail, orderPhoneNumber);
-            return RedirectToAction("Index");
-            
+            //return RedirectToAction("Index");
+            Vendor foundVendor = Vendor.Find(vendorId);
+            // List<Order>  vendorOrders = foundVendor.Orders; //AutoAdds Order to correct Vendor
+            // model.Add("vendor", foundVendor);
+            // model.Add("orders", vendorOrders);Orders<>
+            return View("Views/Vendors/Show.cshtml", foundVendor);
+
         }
         [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
         public ActionResult Show(int vendorId, int orderId)
