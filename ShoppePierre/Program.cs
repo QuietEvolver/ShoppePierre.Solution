@@ -10,6 +10,7 @@ namespace ShoppePierre
       var host = new WebHostBuilder()
         .UseKestrel()
         .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseWebRoot("Content")
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();

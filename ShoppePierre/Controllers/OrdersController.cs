@@ -13,6 +13,14 @@ namespace ShoppePierre.Controllers
             Vendor vendor= Vendor.Find(vendorId);
             return View(vendor);
         }
+        
+        [HttpPost("/orders/new")]
+        public ActionResult Create(int vendorId, string orderName, string orderEmail, string orderPhoneNumber)
+        {
+            Order myOrder= new Order(vendorId, orderName, orderEmail, orderPhoneNumber);
+            return RedirectToAction("Index");
+            
+        }
         [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
         public ActionResult Show(int vendorId, int orderId)
         {
@@ -20,9 +28,9 @@ namespace ShoppePierre.Controllers
             Vendor vendor = Vendor.Find(vendorId);
             Dictionary<string, object> model = new Dictionary<string, object>();
             
-            model.Add("order", order);
+            model.Add("order", order);              
             model.Add("vendor", vendor);
-            return View(model);
+            return View(model); //dictionary "model"
         }
     
         [HttpPost("/orders/delete")]

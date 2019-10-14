@@ -4,7 +4,7 @@ namespace ShoppePierre.Models
 {
   public class Vendor
   {    
-    private  static List<Vendor> _instances = new List<Vendor>{ };
+    private static List<Vendor> _instances = new List<Vendor>{ };
     public string VendorTitle { get; set; }
     public string Description { get; set; }
     public int Id { get; }
@@ -14,17 +14,18 @@ namespace ShoppePierre.Models
     {
       VendorTitle = vendorTitle;
       Description = description;
-      _instances.Add(this);
-      Id = _instances.Count;
       Orders = new List<Order>{ };
+      Id = _instances.Count;//put before instance to start at '0';
+      _instances.Add(this);
     }
+    
     public void AddOrder(Order order)
     { 
       Orders.Add(order);
     }
     public static Vendor Find(int searchId)
     { 
-      return _instances[searchId-1];
+      return _instances[searchId];
     } 
     public static List<Vendor> GetAll()
     {
