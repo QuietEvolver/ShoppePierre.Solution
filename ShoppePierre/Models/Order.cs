@@ -13,15 +13,15 @@ namespace ShoppePierre.Models
     
     public Order(int vendorId, string name, string email, string phoneNumber)
     {
-      Name = name;
+      Name = name; 
       Email = email;
       PhoneNumber = phoneNumber;
-      Id = _instances.Count; //put before instance to start at '0';
-      _instances.Add(this); //Order class _instance
-      Vendor vendor = Vendor.Find(vendorId); //Vendor.Find() parent Id
-      vendor.Orders.Add(this);  //auto adds to correct vendor._instance
+      Id = _instances.Count; 
+      _instances.Add(this); 
+      Vendor vendor = Vendor.Find(vendorId); 
+      vendor.Orders.Add(this); 
     }
-    // order added to this particular Vendor
+ 
     public void AddToVendor(Vendor vendor)
     {
       vendor.Orders.Add(this); 

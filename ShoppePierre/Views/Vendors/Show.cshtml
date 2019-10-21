@@ -2,12 +2,7 @@
 @{
   Layout = "_Layout";
 }
-
-<!-- <h2> Shoppe Pierre Vendor: Each List Order(s)</h2>
- @if (Model.Orders.Count == 0)
-{
-  <p> There are no current entries in the order list.</p>
-} -->
+<h2>@Model.VendorTitle Orders</h2>
 <ol>
 @foreach(Order order in Model.Orders)
 {
@@ -21,4 +16,4 @@
 </ol>
 <a href='/'>Go Back Home</a>
 <a href='/vendors'>Go Back Vendors</a>
-<a href='/vendors/@Model.Id/orders/new'>Orders Home</a>
+<a href='/vendors/@Model.Id/orders/new'>Add to Orders</a>

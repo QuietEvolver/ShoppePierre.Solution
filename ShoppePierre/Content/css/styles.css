@@ -1,15 +1,15 @@
 body {
     font-display: 18px; 
-    background-color:  rgb(116, 89, 89);
-    border: 3px solid black;
+    color:  rgb(116, 89, 89);
+    background-color: rgba(0,255,255, 0.23);
+    border: 2.3em solid burlywood;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size-adjust: 24px;
   }
   
   .jumbotron {
     background-color: aqua;
-    border: 1em dotted burlywood; 
-    /* font-language-override: normal; */
+    border: .68em dotted  rgba(116, 89, 89, 0.2);; 
   }
 
   h2 h4{
